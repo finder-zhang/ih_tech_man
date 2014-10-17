@@ -1,0 +1,2672 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List href="路由器主程序与服务器通讯协议.files/filelist.xml">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>finder</o:Author>
+  <o:LastAuthor>finder</o:LastAuthor>
+  <o:Revision>19</o:Revision>
+  <o:TotalTime>42</o:TotalTime>
+  <o:Created>2014-10-17T01:25:00Z</o:Created>
+  <o:LastSaved>2014-10-17T06:24:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>377</o:Words>
+  <o:Characters>2151</o:Characters>
+  <o:Lines>17</o:Lines>
+  <o:Paragraphs>5</o:Paragraphs>
+  <o:CharactersWithSpaces>2523</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="路由器主程序与服务器通讯协议.files/themedata.thmx">
+<link rel=colorSchemeMapping href="路由器主程序与服务器通讯协议.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073743103 0 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520092929 1073786111 9 0 415 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 1 Char";
+	mso-style-next:正文;
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:240%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:22.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:22.0pt;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 2 Char";
+	mso-style-next:正文;
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:172%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	mso-font-kerning:1.0pt;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-priority:99;
+	mso-style-link:"页眉 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:none;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	border:none;
+	mso-border-bottom-alt:solid windowtext .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 1.0pt 0cm;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-priority:99;
+	mso-style-link:"页脚 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:none;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	mso-themecolor:hyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+span.1Char
+	{mso-style-name:"标题 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 1";
+	mso-ansi-font-size:22.0pt;
+	mso-bidi-font-size:22.0pt;
+	mso-font-kerning:22.0pt;
+	font-weight:bold;}
+span.2Char
+	{mso-style-name:"标题 2 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 2";
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:宋体;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	font-weight:bold;}
+span.Char
+	{mso-style-name:"页眉 Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:页眉;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-font-kerning:1.0pt;}
+span.Char0
+	{mso-style-name:"页脚 Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:页脚;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-font-kerning:1.0pt;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;
+	mso-footnote-separator:url("路由器主程序与服务器通讯协议.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("路由器主程序与服务器通讯协议.files/header.htm") fcs;
+	mso-endnote-separator:url("路由器主程序与服务器通讯协议.files/header.htm") es;
+	mso-endnote-continuation-separator:url("路由器主程序与服务器通讯协议.files/header.htm") ecs;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2049"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='tab-interval:21.0pt;text-justify-trim:
+punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:36.0pt;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>智能家居系统</span><span
+lang=EN-US style='font-size:36.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:26.0pt;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>路由器主程序与服务器通讯协议</span><span
+lang=EN-US style='font-size:26.0pt'><o:p></o:p></span></p>
+
+<h1><span class=GramE><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>一</span></span><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>概述</span></h1>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>路由器主程序与服务器通讯时，主要工作内容有两个，一是接收所有客户端的请求改变设备状态的命令，二是把设备状态改变的命令发送给服务器。</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>二</span><span
+lang=EN-US><span style='mso-spacerun:yes'>&nbsp; </span></span><a
+name="_Toc273368389"><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>数据模型定义</span></a><span lang=EN-US><o:p></o:p></span></h1>
+
+<h2><a name=Account数据模型><span lang=EN-US>Account </span></a><span
+style='mso-bookmark:Account数据模型'><span style='font-family:宋体;mso-ascii-font-family:
+Cambria;mso-ascii-theme-font:major-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+major-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:major-latin'>数据模型</span></span><span
+style='mso-bookmark:Account数据模型'><span lang=EN-US style='mso-ascii-font-family:
+Cambria;mso-fareast-font-family:宋体;mso-hansi-font-family:Cambria;mso-bidi-font-family:
+"Times New Roman"'><o:p></o:p></span></span></h2>
+
+<span style='mso-bookmark:Account数据模型'></span>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=644
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=380 valign=top style='width:284.75pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>username<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=380 valign=top style='width:284.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>用户名</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>passwork</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=380 valign=top style='width:284.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>密码</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span class=SpellE><span lang=EN-US>PhysicalDevice</span></span><span
+lang=EN-US> </span><span style='font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:major-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+major-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:major-latin'>数据模型</span></h2>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=644
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=380 valign=top style='width:284.75pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='tab-stops:69.75pt'><span class=SpellE><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>devicePid</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=380 valign=top style='width:284.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>物理设备</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>ID</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>号，</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>72</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>位</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>devicePort</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='tab-stops:52.5pt'><span class=SpellE><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>int</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=380 valign=top style='width:284.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>端口号，由于一个物理设备的一个</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>72</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>位唯一</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>ID</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>号会对应着多个逻辑设备，所以</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>72</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>位的唯一</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>ID</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>号未能达到逻辑设备与物理按钮（或其他可操作的部份）一一对应，加入</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>port</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>，使</span><span class=SpellE><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>physicalId</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'> + port
+  </span><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>是绝对唯一的组合，达到逻辑设备与物理按钮一一对应的目的。</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>deviceId</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='tab-stops:52.5pt'><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=380 valign=top style='width:284.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>逻辑设备的</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>ID</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>号，有物理设备动作时，通过该</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>ID</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>号找到逻辑设备，改变逻辑设备的状态。</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>type<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='tab-stops:52.5pt'><span class=SpellE><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>int</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=380 valign=top style='width:284.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>设备类型，参看</span><span
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'> </span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>《</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><a
+  href="../非嵌入式部份/服务器与客户端通讯协议.htm#Device的state详细定义"><span lang=EN-US
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri'><span lang=EN-US>逻辑设备的<span lang=EN-US>类<span lang=EN-US>型说明</span></span></span></span></a></span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>》</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>state<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='tab-stops:52.5pt'><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>object<o:p></o:p></span></p>
+  </td>
+  <td width=380 valign=top style='width:284.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>设备状态，参看</span><span
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'> </span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>《</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><a
+  href="../非嵌入式部份/服务器与客户端通讯协议.htm#Device的state详细定义"><span lang=EN-US
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri'><span lang=EN-US>逻辑设备的类型说明</span></span></a></span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>》</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>三</span><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp; </span></span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>协议正文</span></h1>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:
+major-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:Cambria;mso-hansi-theme-font:major-latin'>激活协议</span><span
+lang=EN-US> <span class=SpellE>cmd</span>=activate</span><span lang=EN-US
+style='mso-ascii-font-family:Cambria;mso-fareast-font-family:宋体;mso-hansi-font-family:
+Cambria;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>客户端要求激活一个新的家庭</span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>请求数据：</span><span lang=EN-US><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=786
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.2pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=142 valign=top style='width:106.15pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=522 valign=top style='width:391.2pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.2pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>controllerId</span></span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.15pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=522 valign=top style='width:391.2pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>“0012345678abcdef00”,</span><span style='font-family:宋体;
+  mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>暂定为</span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>18</span><span style='font-family:宋体;mso-ascii-font-family:
+  Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>位的</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>16</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>进制数的字符串</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes;height:3.5pt'>
+  <td width=123 valign=top style='width:92.2pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:3.5pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>encodeId</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.15pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:3.5pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=522 valign=top style='width:391.2pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:3.5pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>“12345678901234567890123456789012” 32</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>位十六进制数的加密内容，该</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>32</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>位</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>16</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>进制数的内容其实是</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'> <span
+  class=SpellE>controllerId</span> </span><span style='font-family:宋体;
+  mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>经过一个</span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'> KEY </span><span style='font-family:宋体;mso-ascii-font-family:
+  Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>加密后的密文。</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>服务器使用该</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'> KEY </span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>对</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'> <span class=SpellE>encodeId</span>
+  </span><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>进行解密，则可以得出</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'> <span
+  class=SpellE>controllerId</span> </span><span style='font-family:宋体;
+  mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>，从而确定本次命令的合法性。</span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>而</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'> KEY </span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>并非所有用户相同，而是由</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'> <span
+  class=SpellE>controllerId</span> </span><span style='font-family:宋体;
+  mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>根据一个算法产生，不同的</span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'> <span class=SpellE>controllerId</span> </span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>将会产生不同的</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'> KEY</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>。同一</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'> <span class=SpellE>controllerId</span>
+  </span><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>则会产生同样的</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'> KEY</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>。</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>响应数据</span><span lang=EN-US><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=786
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.2pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=142 valign=top style='width:106.15pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=522 valign=top style='width:391.2pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.2pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>controllerId</span></span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.15pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=522 valign=top style='width:391.2pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>18</span><span style='font-family:宋体;mso-ascii-font-family:
+  Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>位唯一</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>ID<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes;height:3.5pt'>
+  <td width=123 valign=top style='width:92.2pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:3.5pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>result<o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.15pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:3.5pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>int</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=522 valign=top style='width:391.2pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:3.5pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>激活结果</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>激活成功后，服务器开始建立该家庭的数据库</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:13.0pt;margin-right:0cm;margin-bottom:
+13.0pt;margin-left:0cm;line-height:170%;mso-pagination:lines-together;
+page-break-after:avoid;mso-outline-level:2'><a name="_Toc273368426"><b><span
+style='font-size:16.0pt;line-height:170%;font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria;mso-bidi-font-family:"Times New Roman"'>用户同步协议</span></b></a><span
+style='mso-bookmark:_Toc273368426'><span class=SpellE><b><span lang=EN-US
+style='font-size:16.0pt;line-height:170%;font-family:"Cambria","serif";
+mso-fareast-font-family:宋体;mso-bidi-font-family:"Times New Roman"'>cmd</span></b></span></span><span
+style='mso-bookmark:_Toc273368426'><b><span lang=EN-US style='font-size:16.0pt;
+line-height:170%;font-family:"Cambria","serif";mso-fareast-font-family:宋体;
+mso-bidi-font-family:"Times New Roman"'>=<span class=SpellE>sync</span></span></b></span><span
+class=SpellE><b><span lang=EN-US style='font-size:16.0pt;line-height:170%;
+font-family:"Cambria","serif";mso-fareast-font-family:宋体;mso-bidi-font-family:
+"Times New Roman"'>Account</span></b></span><b><span lang=EN-US
+style='font-size:16.0pt;line-height:170%;font-family:"Cambria","serif";
+mso-fareast-font-family:宋体;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=786
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.2pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=142 valign=top style='width:106.15pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=522 valign=top style='width:391.15pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.2pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>account<o:p></o:p></span></p>
+  </td>
+  <td width=142 valign=top style='width:106.15pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>Array&lt;Account&gt;<o:p></o:p></span></p>
+  </td>
+  <td width=522 valign=top style='width:391.15pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>Account </span><span style='font-family:宋体;mso-ascii-font-family:
+  Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>为</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>object </span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>型，详见上文数据模型</span><span
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'> <span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:13.0pt;margin-right:0cm;margin-bottom:
+13.0pt;margin-left:0cm;line-height:170%;mso-pagination:lines-together;
+page-break-after:avoid;mso-outline-level:2'><a name="_Toc273368422"><b><span
+style='font-size:16.0pt;line-height:170%;font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria;mso-bidi-font-family:"Times New Roman"'>控制主机长轮询</span></b></a><span
+style='mso-bookmark:_Toc273368422'><b><span lang=EN-US style='font-size:16.0pt;
+line-height:170%;font-family:"Cambria","serif";mso-fareast-font-family:宋体;
+mso-bidi-font-family:"Times New Roman"'> <span class=SpellE>cmd</span>=<span
+class=SpellE>cpoll</span></span></b></span><b><span lang=EN-US
+style='font-size:16.0pt;line-height:170%;font-family:"Cambria","serif";
+mso-fareast-font-family:宋体;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>类似客户端长轮询，由控制主机向服务器发起，服务器向控制主机推送数据。推送的数据主要是客户端做的一些修改或客户端发送的命令。</span><span
+lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:"Times New Roman"'>请求数据：</span></b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:
+宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=520
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>accessToken</span></span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>登录时获得的</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>token<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>version<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>long<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>版本号，第一次</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>poll</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>不用带版本号，每次请求需要传入服务器返回的最新版本号</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+Calibri;mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:"Times New Roman"'>响应数据：</span></b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:
+宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=520
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>status<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>int</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'>轮询状态</span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>1 -</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'>有数据更新，此时</span><span
+  class=SpellE><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>crons,scenes,rooms,commands</span></span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'>有数据返回</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>0-</span><span style='font-family:
+  宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>连接时间太长，服务器主动断开，此时客户端应立即再次请求服务器。</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>version<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>long<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>版本号</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>rooms<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>Array&lt;Room&gt;<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>最新的房间列表</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>crons</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>Array&lt;<span class=SpellE>Cron</span>&gt;<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>最新的定时器列表</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>scenes<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>Array&lt;<span class=SpellE>Cron</span>&gt;<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>最新的场景列表</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>controls<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>Array&lt;<span class=SpellE>ControlRequest</span>&gt;<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>客户端发送的控制请求，控制主机需要依次执行，并通过</span><span
+  class=SpellE><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>cmd</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>=reply</span><span style='font-family:宋体;mso-ascii-font-family:
+  Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>一次性向服务器发送控制结果</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>forceLogout</span></span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>int</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>=0</span><span style='font-family:宋体;mso-ascii-font-family:
+  Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>时正常，</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>=1</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>时客户端强制下线，重新回到登录界面，重新登录。</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:13.0pt;margin-right:0cm;margin-bottom:
+13.0pt;margin-left:0cm;line-height:170%;mso-pagination:lines-together;
+page-break-after:avoid;mso-outline-level:2'><a name="_Toc273368423"><b><span
+style='font-size:16.0pt;line-height:170%;font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria;mso-bidi-font-family:"Times New Roman"'>控制主机回复控制结果</span></b></a><span
+style='mso-bookmark:_Toc273368423'><b><span lang=EN-US style='font-size:16.0pt;
+line-height:170%;font-family:"Cambria","serif";mso-fareast-font-family:宋体;
+mso-bidi-font-family:"Times New Roman"'> <span class=SpellE>cmd</span>=reply</span></b></span><b><span
+lang=EN-US style='font-size:16.0pt;line-height:170%;font-family:"Cambria","serif";
+mso-fareast-font-family:宋体;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>当服务器推送的</span><span
+class=SpellE><span lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:
+宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>cpoll</span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:"Times New Roman"'>中有控制命令时，执行完这些控制命令后需要调用该接口告诉服务器控制结果。</span><span
+lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:"Times New Roman"'>请求数据：</span></b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:
+宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=520
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>accessToken</span></span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>登录时获得的</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>token<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>results<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>Array&lt;<span class=SpellE>ControlReply</span>&gt;<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>对应控制请求的结果</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>,JSON</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>字符串</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:"Times New Roman"'>响应数据：</span></b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:
+宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=520
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>result<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>int</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'>请求结果</span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>1 -</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'>成功</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>0-</span><span style='font-family:
+  宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>失败，</span><span class=SpellE><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'>errorMsg</span></span><span style='font-family:
+  宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>有效</span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>errorMsg</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>错误信息</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:13.0pt;margin-right:0cm;margin-bottom:
+13.0pt;margin-left:0cm;line-height:170%;mso-pagination:lines-together;
+page-break-after:avoid;mso-outline-level:2'><a name="_Toc273368428"><b><span
+style='font-size:16.0pt;line-height:170%;font-family:宋体;mso-ascii-font-family:
+Cambria;mso-hansi-font-family:Cambria;mso-bidi-font-family:"Times New Roman"'>开启入网状态</span></b></a><span
+style='mso-bookmark:_Toc273368428'><span class=SpellE><b><span lang=EN-US
+style='font-size:16.0pt;line-height:170%;font-family:"Cambria","serif";
+mso-fareast-font-family:宋体;mso-bidi-font-family:"Times New Roman"'>cmd</span></b></span></span><span
+style='mso-bookmark:_Toc273368428'><b><span lang=EN-US style='font-size:16.0pt;
+line-height:170%;font-family:"Cambria","serif";mso-fareast-font-family:宋体;
+mso-bidi-font-family:"Times New Roman"'>=<span class=SpellE>openConnectionMode</span></span></b></span><b><span
+lang=EN-US style='font-size:16.0pt;line-height:170%;font-family:"Cambria","serif";
+mso-fareast-font-family:宋体;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>指定某个逻辑设备进入物理设备关联状态，调用该接口后，主程序会将接下来收到的入网设备（同一类型）关联到该逻辑设备上。</span><span
+lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:"Times New Roman"'>请求数据：</span></b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:
+宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=520
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>accessToken</span></span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>主机登录时获得的</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>token<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>deviceID</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>long<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>逻辑设备</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>ID<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:"Times New Roman"'>响应数据：</span></b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:
+宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=520
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>result<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>int</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'>请求结果</span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>1 –</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'>关联成功，</span><span
+  class=SpellE><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>devicePid</span></span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'>有效</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>0- </span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'>关联失败，</span><span
+  class=SpellE><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>errorMsg</span></span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'>有效</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>devicePid</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>String<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'>关联到的物理设备</span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>ID<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>devicePort</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>int</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'>关联到的物理设备</span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>PORT<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>errorMsg</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>错误信息，超时或设备类型错误</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:13.0pt;margin-right:0cm;margin-bottom:
+13.0pt;margin-left:0cm;line-height:170%;mso-pagination:lines-together;
+page-break-after:avoid;mso-outline-level:2'><b><span style='font-size:16.0pt;
+line-height:170%;font-family:宋体;mso-ascii-font-family:Cambria;mso-hansi-font-family:
+Cambria;mso-bidi-font-family:"Times New Roman"'>断开设备请求</span></b><span
+class=SpellE><b><span lang=EN-US style='font-size:16.0pt;line-height:170%;
+font-family:"Cambria","serif";mso-fareast-font-family:宋体;mso-bidi-font-family:
+"Times New Roman"'>cmd</span></b></span><b><span lang=EN-US style='font-size:
+16.0pt;line-height:170%;font-family:"Cambria","serif";mso-fareast-font-family:
+宋体;mso-bidi-font-family:"Times New Roman"'>=<span class=SpellE>disconnectDevice</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>客户端请求断开某个设备的连接</span><span
+lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:"Times New Roman"'>请求数据：</span></b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:
+宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=520
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>accessToken</span></span><span lang=EN-US
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>主机登录时获得的</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>token<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>deviceID</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>long<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>逻辑设备</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>ID<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:"Times New Roman"'>响应数据：</span></b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:
+宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=520
+ style='margin-left:5.4pt;border-collapse:collapse;mso-table-layout-alt:fixed;
+ border:none;mso-border-alt:solid black .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid black;mso-border-insidev:
+ .5pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>名称</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>数据类型</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'>说明</span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>result<o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>int</span></span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'>请求结果</span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>1 –</span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'>断开成功</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>0- </span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'>断开失败，</span><span
+  class=SpellE><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman";mso-bidi-font-weight:bold'>errorMsg</span></span><span
+  style='font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman";mso-bidi-font-weight:bold'>有效</span><span
+  lang=EN-US style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman";
+  mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=123 valign=top style='width:92.15pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .5pt;mso-border-alt:solid black .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>errorMsg</span></span><span lang=EN-US style='mso-ascii-font-family:
+  Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=141 valign=top style='width:106.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-ascii-font-family:Calibri;
+  mso-fareast-font-family:宋体;mso-hansi-font-family:Calibri;mso-bidi-font-family:
+  "Times New Roman"'>String<o:p></o:p></span></p>
+  </td>
+  <td width=255 valign=top style='width:191.6pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .5pt;mso-border-left-alt:solid black .5pt;
+  mso-border-alt:solid black .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+  mso-hansi-font-family:Calibri;mso-bidi-font-family:"Times New Roman"'>错误信息</span><span
+  style='mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;mso-hansi-font-family:
+  Calibri;mso-bidi-font-family:"Times New Roman"'> <span lang=EN-US><o:p></o:p></span></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>如有其他遗漏，由李俊补充</span></p>
+
+</div>
+
+</body>
+
+</html>
